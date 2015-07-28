@@ -96,6 +96,8 @@ header {
   position: relative; }
   header .btn-primary {
     margin: 11px; }
+  header ul.nav.navbar-nav > li.active a {
+    color: #947a6f; }
   header ul.nav.navbar-nav > li > a {
     height: 94px;
     box-sizing: border-box;
@@ -129,6 +131,35 @@ header {
 .row.header {
   padding-top: 15px;
   margin-bottom: 20px; }
+
+#subheader {
+  background: #5e5e5e;
+  color: white;
+  padding: 5px 0; }
+  #subheader h4 {
+    font-weight: lighter; }
+  #subheader ul.subnav {
+    margin: 6px 0; }
+    @media (max-width: 768px) {
+      #subheader ul.subnav > li {
+        display: block !important; }
+        #subheader ul.subnav > li a {
+          display: block !important;
+          text-align: left; } }
+    #subheader ul.subnav li.active a {
+      background: #b94213; }
+    #subheader ul.subnav li a {
+      color: white;
+      display: inline-block;
+      padding: 5px 12px;
+      border-radius: 3px;
+      background: none;
+      -webkit-transition: .3s all;
+      transition: .3s all;
+      font-size: 14px; }
+      #subheader ul.subnav li a:hover {
+        background: #b94213;
+        text-decoration: none; }
 
 .header-mobile {
   height: 55px;
@@ -293,12 +324,24 @@ ul.mobile_nav {
 
 .jumbotron {
   padding: 45px 0;
-  height: 300px; }
+  height: auto;
+  background: #7d6561;
+  color: white;
+  background-position: center;
+  background-size: cover; }
+  .jumbotron h1 {
+    font-size: 36px;
+    margin-bottom: 20px;
+    line-height: 50px; }
+  .jumbotron p {
+    font-size: 18px;
+    margin-bottom: 25px; }
+  .jumbotron .btn {
+    padding: 10px 25px; }
   @media (max-width: 768px) {
     .jumbotron {
       padding-left: 20px;
-      padding-right: 20px;
-      text-shadow: -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff, 1px 1px 0 #fff; } }
+      padding-right: 20px; } }
 
 #content_header {
   margin-top: 8px;
@@ -309,10 +352,14 @@ ul.mobile_nav {
       color: #b94213;
       text-decoration: none; }
 
-#main {
+#main, .content-section {
   margin-top: 20px; }
-  #main img {
+  #main img, .content-section img {
     max-width: 100%; }
+  #main h1, #main h2, #main h3, #main h4, #main h5, #main h6, .content-section h1, .content-section h2, .content-section h3, .content-section h4, .content-section h5, .content-section h6 {
+    margin-bottom: 1.05em; }
+  #main h1, #main h2, .content-section h1, .content-section h2 {
+    font-weight: lighter; }
 
 #three_features .features {
   text-align: center;
@@ -331,7 +378,7 @@ ul.mobile_nav {
 section {
   background: #f7f2f0;
   position: relative;
-  padding: 50px 0; }
+  padding: 40px 0; }
   section.alt {
     background: #efecea; }
   section .content {
@@ -357,6 +404,17 @@ section {
       height: auto; }
   section#benefit-1 .illustration {
     margin-top: -20px; }
+  section.pullquote {
+    margin: 30px 0; }
+    section.pullquote .pullquote-image img {
+      margin-left: auto;
+      margin-right: auto;
+      padding: 40px 0; }
+    section.pullquote .pullquote-text {
+      padding: 20px 0 20px 20px;
+      border-left: 1px solid #ddd;
+      font-size: 17px;
+      line-height: 25px; }
 
 /* Sidebar                */
 .btn-clear {
@@ -375,6 +433,54 @@ section {
     position: absolute;
     right: 3px;
     top: 9px; }
+
+/* Logo Slider */
+.centered_leadin {
+  text-align: center; }
+  .centered_leadin h2 {
+    font-weight: lighter;
+    margin-top: 35px; }
+  .centered_leadin p {
+    max-width: 400px;
+    margin: auto; }
+
+.logoslider .carousel-inner {
+  padding: 0 0px; }
+.logoslider .item {
+  padding: 0 40px; }
+.logoslider .thumbnail {
+  display: block;
+  padding: 0px 20px;
+  margin-bottom: 20px;
+  line-height: 1.42857143;
+  border-radius: 0;
+  border: none;
+  background-color: none;
+  height: 160px;
+  line-height: 160px;
+  text-align: center; }
+  .logoslider .thumbnail img {
+    display: inline-block; }
+.logoslider .carousel-control {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 15%;
+  opacity: .5;
+  font-size: 20px;
+  color: #e75218;
+  text-align: center;
+  text-shadow: none; }
+.logoslider .carousel-control.left {
+  background-image: none; }
+.logoslider .carousel-control.right {
+  left: auto;
+  right: 0;
+  background-image: none; }
+.logoslider .carousel-control {
+  padding-top: 10.25%;
+  width: 5%; }
 
 /* Newsletter             */
 .ctabox {
@@ -426,6 +532,11 @@ footer {
         left: -28px; }
 
 /* Utility Classes        */
+.text-center img {
+  text-align: center;
+  margin-right: auto;
+  margin-left: auto; }
+
 .width-control {
   max-width: 1170px; }
 
@@ -459,5 +570,11 @@ footer {
 @media (max-width: 768px) {
   .screen-xs-text-left {
     text-align: left; } }
+
+@media (max-width: 768px) {
+  .screen-xs-text-center {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto; } }
 
 /*# sourceMappingURL=app.css.map */
